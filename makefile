@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -std=c++0x -Wall
 LDFLAGS=
-SOURCES=main.cpp Segment.cpp
+SOURCES=main.cpp Segment.cpp Snake.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=Snake
 
