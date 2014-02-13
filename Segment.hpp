@@ -2,22 +2,30 @@
 #define SEGMENT_HPP
 
 
-//======================================================================================================================
+/** Creates a snake in the group. */
 class Segment {
 public:
-    Segment( void );
+    Segment() : m_prev( nullptr ), m_next( nullptr ) {}
 
-    /** Prints '=' or 'ooO', if segment is a tail and '[8)-<', if it is a head. */
-    void print( void ) const;
+    void print() const;
+
+    /* Setters. */
+    void SetPrev( Segment* segment ) { m_prev = segment; }
+    void SetNext( Segment* segment ) { m_next = segment; }
+
+    /* Check alignment. */
+    bool IsHead() const { return ( m_prev && !m_next ); }
+    bool IsTile() const { return ( !m_prev && m_next ); }
+    bool IsInside() const { return ( m_prev && m_next ); }
+    bool IsAlone() const { return ( !m_prev && !m_next ); }
 
 private:
-    /** Previous segment. */
+    /** Pointer to a previous segment. */
     Segment* m_prev;
 
-    /** Next segment. */
+    /** Pointer to a next segment. */
     Segment* m_next;
 };
-//======================================================================================================================
 
 
 #endif

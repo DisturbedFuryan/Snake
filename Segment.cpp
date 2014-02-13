@@ -4,20 +4,17 @@
 using namespace std;
 
 
-Segment::Segment() : m_prev( nullptr ), m_next( nullptr ) {}
-
-
 void Segment::print() const {
-    if ( m_prev && m_next ) {
+    if ( IsInside() ) {
         cout << '=';
     }
-    else if ( !m_prev && m_next ) {
+    else if ( IsTile() ) {
         cout << "ooO";
     }
-    else if ( m_prev && !m_next ) {
+    else if ( IsHead() ) {
         cout << "[8)-<";
     }
     else {
-        cout << '@';  // Little snake.
+        cout << "@";  // Little snake.
     }
 }
