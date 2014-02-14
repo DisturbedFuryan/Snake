@@ -4,6 +4,9 @@
 using namespace std;
 
 
+unsigned Segment::ms_quantity = 0;
+
+
 void Segment::Print() const {
     if ( IsInside() ) {
         cout << '=';
