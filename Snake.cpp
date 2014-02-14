@@ -65,14 +65,19 @@ void Snake::RemoveAllSegments() {
     if ( m_tail ) {  // If there is no tail, there is nothing to remove.
         Segment* executor = m_tail;  // Points victim, which is a previous segment.
         Segment* nextExecutor = nullptr;
+        Segment* victim = nullptr;
 
         // Point and remove victims sequentially.
         while ( ( nextExecutor = executor->GetNext() ) ) {
             executor = nextExecutor;
-            delete executor->GetPrev();
+            victim = executor->GetPrev();
+
+            cout << "Deleting " << victim->GetId() << " segment...\n";
+            delete victim;
         }
 
         // Last executor is still alive, so...
+        cout << "Deleting " << executor->GetId() << " segment...\n";
         delete executor;
 
         m_tail = m_head = nullptr;
