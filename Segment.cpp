@@ -4,9 +4,6 @@
 using namespace std;
 
 
-unsigned Segment::ms_quantity = 0;
-
-
 void Segment::Print() const {
     if ( IsInside() ) {
         cout << '=';
@@ -21,3 +18,6 @@ void Segment::Print() const {
         cout << "@";  // Little snake.
     }
 }
+
+
+unsigned Segment::ms_quantity = 0;

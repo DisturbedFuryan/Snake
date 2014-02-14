@@ -10,10 +10,10 @@ public:
     Snake() : m_head( nullptr ), m_tail( nullptr ) {}
     ~Snake();
 
-    /** Adds one segment in front. */
+    /** Adds segments in front. */
     void GrowFront( unsigned length = 1 ); 
 
-    /** Adds one segment behind. */
+    /** Adds segments behind. */
     void GrowBack( unsigned length = 1 );
 
     void RemoveAllSegments();
