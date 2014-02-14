@@ -18,6 +18,8 @@ public:
 
     void RemoveAllSegments();
 
+    void Print();
+
 private:
     /** Head. */
     Segment* m_head;

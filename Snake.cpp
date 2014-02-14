@@ -66,3 +66,14 @@ void Snake::RemoveAllSegments() {
         m_tail = m_head = nullptr;
     }
 }
+
+
+void Snake::Print() {
+    if ( m_tail ) {  // If there is no tail, there is nothing to print.
+        Segment* toPrint = m_tail;
+
+        do {
+            toPrint->Print();
+        } while ( ( toPrint = toPrint->GetNext() ) );
+    }
+}
