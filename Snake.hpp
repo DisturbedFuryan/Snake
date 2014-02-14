@@ -16,6 +16,8 @@ public:
     /** Adds one segment behind. */
     void GrowBack();
 
+    void RemoveAllSegments();
+
 private:
     /** Head. */
     Segment* m_head;

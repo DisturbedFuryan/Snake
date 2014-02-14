@@ -2,25 +2,7 @@
 
 
 Snake::~Snake() {
-    // Remove segments starting from a tail.
-    if ( m_tail ) {  // If there is no tail, there is nothing to remove.
-        Segment* executor = m_tail;  // Points victim, which is a previous segment.
-        Segment* nextExecutor = nullptr;
-        Segment* victim = nullptr;
-
-        // Point and remove victims sequentially.
-        while ( ( nextExecutor = executor->GetNext() ) ) {
-            executor = nextExecutor;
-            victim = executor->GetPrev();
-
-            delete victim;
-            victim = nullptr;
-        }
-
-        // Last executor is still alive, so...
-        delete executor;
-        executor = nullptr;
-    }
+    RemoveAllSegments();
 }
 
 
@@ -63,4 +45,24 @@ void Snake::GrowBack() {
     
     // Make new segment as a tail.
     m_tail = segment;
+}
+
+
+void Snake::RemoveAllSegments() {
+    // Remove segments starting from a tail.
+    if ( m_tail ) {  // If there is no tail, there is nothing to remove.
+        Segment* executor = m_tail;  // Points victim, which is a previous segment.
+        Segment* nextExecutor = nullptr;
+
+        // Point and remove victims sequentially.
+        while ( ( nextExecutor = executor->GetNext() ) ) {
+            executor = nextExecutor;
+            delete executor->GetPrev();
+        }
+
+        // Last executor is still alive, so...
+        delete executor;
+
+        m_tail = m_head = nullptr;
+    }
 }
