@@ -4,13 +4,17 @@
 #include "Segment.hpp"
 
 
-//======================================================================================================================
+/** Snake as a bidirectional list. */
 class Snake {
 public:
-    Snake();
+    Snake() : m_head( nullptr ), m_tail( nullptr ) {}
+    ~Snake();
+
+    /** Adds one segment in front. */
+    void GrowFront(); 
 
     /** Adds one segment behind. */
-    void Grow();
+    void GrowBack();
 
 private:
     /** Head. */
@@ -19,13 +23,6 @@ private:
     /** Tail. */
     Segment* m_tail;
 };
-//======================================================================================================================
-
-
-inline void Snake::Grow() {
-    Segment* segment = new Segment;
-
-}
 
 
 #endif
