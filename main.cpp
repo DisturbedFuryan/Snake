@@ -1,13 +1,15 @@
-#include "Segment.hpp"
+#include "Snake.hpp"
 #include <iostream>
 
 
 //**********************************************************************************************************************
 int main( int argc, char** argv ) {
-    Segment segment;
+    Snake snake;
 
-    segment.print();
+    snake.GrowBack();
 
+    snake.Print();
+    
     return 0;
 }
 //**********************************************************************************************************************
