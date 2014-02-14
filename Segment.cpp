@@ -4,7 +4,7 @@
 using namespace std;
 
 
-void Segment::print() const {
+void Segment::Print() const {
     if ( IsInside() ) {
         cout << '=';
     }

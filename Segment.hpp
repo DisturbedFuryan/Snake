@@ -7,7 +7,7 @@ class Segment {
 public:
     Segment() : m_prev( nullptr ), m_next( nullptr ) {}
 
-    void print() const;
+    void Print() const;
 
     /* Setters. */
     void SetPrev( Segment* segment ) { m_prev = segment; }
