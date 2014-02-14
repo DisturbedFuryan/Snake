@@ -13,6 +13,10 @@ public:
     void SetPrev( Segment* segment ) { m_prev = segment; }
     void SetNext( Segment* segment ) { m_next = segment; }
 
+    /* Getters. */
+    Segment* GetPrev() { return m_prev; }
+    Segment* GetNext() { return m_next; }
+
     /* Check alignment. */
     bool IsHead() const { return ( m_prev && !m_next ); }
     bool IsTile() const { return ( !m_prev && m_next ); }
