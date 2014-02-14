@@ -1,7 +1,7 @@
 #ifndef SNAKE_HPP
 #define SNAKE_HPP
 
-#include "Segment.hpp"
+class Segment;
 
 
 /** Snake as a bidirectional list. */
@@ -11,10 +11,10 @@ public:
     ~Snake();
 
     /** Adds one segment in front. */
-    void GrowFront(); 
+    void GrowFront( unsigned length = 1 ); 
 
     /** Adds one segment behind. */
-    void GrowBack();
+    void GrowBack( unsigned length = 1 );
 
     void RemoveAllSegments();
 
